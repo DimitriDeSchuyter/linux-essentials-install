@@ -6,6 +6,12 @@ if [ -f ~/.bash_env ]; then
     . ~/.bash_env
 fi
 
+# Python binaries.
+# set PATH so it includes python binary location private bin if it exists
+if [ -d "/usr/local/bin/python3" ] ; then
+    PATH="/usr/local/bin/python3:$PATH"
+fi
+
 # run .bash_logout on session exit as
 exit_session() {
     . "$HOME/.bash_logout"

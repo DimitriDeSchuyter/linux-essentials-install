@@ -8,7 +8,10 @@
 ## INCLUDES
 from depuydt import echo, command
 
+import os
+user = os.getlogin()
+
 echo.title("Adding current user to the docker group")
 command.exec("groupadd docker")
-command.exec("usermod -aG docker $SUDO_USER")
-command.exec("printf \" \" && grep 'docker' /etc/group")
+command.exec("sudo usermod -aG docker " + str(user))
+command.exec("grep 'docker' /etc/group")
