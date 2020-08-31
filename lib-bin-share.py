@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 
 ############################################################################
-## Linux installation script (MANDATORY)                                  ##
 ## Author: Frederic Depuydt                                               ##
 ## Mail: frederic.depuydt@outlook.com                                     ##
-##                                                                        ##
-## Executing part X requires all previous mandatory parts to be installed ##
 ############################################################################
+
 from pprint import pprint
 
 ## TITLE
