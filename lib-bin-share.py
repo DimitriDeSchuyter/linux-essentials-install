@@ -10,10 +10,11 @@ from pprint import pprint
 ## TITLE
 print("Installation Part 01", "Installing libraries, binaries and shares")
 
+
+
 ## Installing python libraries and binaries
 import os
-path = os.popen("cd /usr/local/lib/python3.?/dist-packages/ && pwd").read().rstrip()
-os.system("sudo git clone https://github.com/fredericdepuydt/python-libraries.git " + path + "/depuydt")
+os.system("sudo pip3 install --upgrade -q git+https://github.com/fredericdepuydt/python-libraries.git")
 
 ## INCLUDES
 from depuydt import command
