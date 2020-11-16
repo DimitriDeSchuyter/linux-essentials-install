@@ -8,8 +8,8 @@
 ## INCLUDES
 from depuydt import echo, command
 
-import os
-user = os.getlogin()
+import os, pwd
+user = pwd.getpwuid(os.getuid())[0]
 
 echo.title("Adding current user to the docker group")
 command.exec("groupadd docker")
