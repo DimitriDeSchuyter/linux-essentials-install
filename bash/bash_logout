@@ -1,2 +1,3 @@
+
 # Remove VSCode folder (to prevent issues)
 rm -r ~/.vscode-server
