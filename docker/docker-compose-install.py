@@ -6,6 +6,10 @@
 ############################################################################
 
 ## INCLUDES
+import sys
+import os
+path = os.popen("cd /usr/local/lib/python3.?/dist-packages/ && pwd").read().rstrip()
+sys.path.append(path + "/depuydt/src/")
 from depuydt import echo, command
 
 echo.comment("Installing Docker-Compose")
@@ -20,4 +24,7 @@ else:
     echo.error("Architecture " + arch + "currently unsupported.")
     exit()
 
-command.exec("sudo chmod +x /usr/local/bin/docker-compose")
+command.exec("sudo chmod 755 /usr/local/bin/docker-compose")
+
+user = os.getlogin()
+command.exec("sudo chown " +  str(user) + " /var/run/docker.sock")

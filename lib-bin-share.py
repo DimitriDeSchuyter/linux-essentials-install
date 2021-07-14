@@ -11,15 +11,18 @@ from pprint import pprint
 print("Installation Part 01", "Installing libraries, binaries and shares")
 
 ## Installing python libraries and binaries
+import sys
 import os
 path = os.popen("cd /usr/local/lib/python3.?/dist-packages/ && pwd").read().rstrip()
-os.system("sudo git clone https://github.com/fredericdepuydt/python-libraries.git " + path + "/depuydt")
+print(path + "/depuydt/src/")
+os.system("sudo git clone rpi https://github.com/DimitriDeSchuyter/python-libraries.git " + path + "/depuydt")
 
 ## INCLUDES
+sys.path.append(path + "/depuydt/src/")
 from depuydt import command
 
 ## Installing python binaries
-command.exec("sudo git clone https://github.com/fredericdepuydt/python-binaries.git /usr/local/bin/python3")
+command.exec("sudo git clone rpi https://github.com/DimitriDeSchuyter/python-binaries.git /usr/local/bin/python3")
 command.exec("sudo chmod +x /usr/local/bin/python3/*")
 
 ## Installing shares
