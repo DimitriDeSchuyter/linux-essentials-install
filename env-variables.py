@@ -15,6 +15,12 @@ hostname = env.require("HOSTNAME")
 domainname = env.require("DOMAINNAME")
 env.save()
 
+os.environ["HOSTNAME"] =hostname;
+echo.notice(os.environ["HOSTNAME"] )
+
+os.environ["DOMAINNAME"] =domainname;
+echo.notice(os.environ["DOMAINNAME"] )
+
 # Writing hostname to /etc/hostname and /etc/hosts file
 command.exec("sudo chmod 666 /etc/hostname /etc/hosts")
 f = File("/etc/hostname", "w")
