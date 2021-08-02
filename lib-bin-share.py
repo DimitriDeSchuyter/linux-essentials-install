@@ -27,3 +27,5 @@ command.exec("sudo chmod +x /usr/local/bin/python3/*")
 
 ## Installing shares
 command.exec("sudo cp -a share/. /usr/local/share/")
+## installing apache2 utils for htpasswd password generation in essentials
+command.exec("sudo apt-get install -y apache2-utils")
