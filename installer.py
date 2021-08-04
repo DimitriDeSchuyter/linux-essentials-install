@@ -8,20 +8,21 @@ import sys
 import os
 # os.system("sudo chown pi:root -R /mnt")
 # os.system("sudo chmod -R g+s /mnt")
+exec(open("software.py").read())
 
-exec(open("lib-bin-share.py").read())
+# exec(open("lib-bin-share.py").read())
 
-exec(open("bash/append.py").read())
-exec(open("env-variables.py").read())
+# exec(open("bash/append.py").read())
+# exec(open("env-variables.py").read())
 
-from depuydt import echo
-echo.section("Linux essentials - INSTALL", "Installing Docker and Docker-Compose")
-exec(open("docker/docker-install.py").read())
-exec(open("docker/docker-group.py").read())
-exec(open("docker/docker-compose-install.py").read())
+# from depuydt import echo
+# echo.section("Linux essentials - INSTALL", "Installing Docker and Docker-Compose")
+# exec(open("docker/docker-install.py").read())
+# exec(open("docker/docker-group.py").read())
+# exec(open("docker/docker-compose-install.py").read())
 
-echo.section("Linux essentials - INSTALL", "Installing mkcert for self signed certificates")
-exec(open("tls-key-generator.py").read());
+# echo.section("Linux essentials - INSTALL", "Installing mkcert for self signed certificates")
+# exec(open("tls-key-generator.py").read());
 
-echo.section("Linux essentials - INSTALL", "Installing MariaDB")
-exec(open("mariadb.py").read());
+# echo.section("Linux essentials - INSTALL", "Installing MariaDB")
+# exec(open("mariadb.py").read());
