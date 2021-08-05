@@ -9,6 +9,8 @@ from depuydt import command, echo, environment
 from depuydt.file import File
 
 echo.section("Linux essentials - INSTALL", "Setting environment variables")
+f = File("~/.env", "w") 
+f.close()
 
 env = environment.Environment("~/.env")
 hostname = env.require("HOSTNAME")

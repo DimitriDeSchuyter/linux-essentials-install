@@ -13,9 +13,9 @@ from pprint import pprint
 print("Installation Part 01", "Installing software and tools");
 
 ## install python tools
-os.system("sudo apt-get install python3-setuptools")
-os.system("sudo apt-get install python3-pip")
-os.system("sudo apt-get install python-influxdb")
+os.system("sudo apt-get -y install python3-setuptools")
+os.system("sudo apt-get -y install python3-pip")
+os.system("sudo apt-get -y install python-influxdb")
 
 ## installing apache2 utils for htpasswd password generation in essentials
 os.system("sudo apt-get install -y apache2-utils")

@@ -8,15 +8,19 @@ path = os.popen("cd /usr/local/lib/python3.?/dist-packages/ && pwd").read().rstr
 sys.path.append(path + "/depuydt/src/")
 from depuydt import command,environment,echo
 
-echo.notice("install libnss3 and golang");
+echo.notice("install libnss3");
 command.exec("sudo apt-get install libnss3-tools");
-command.exec("sudo apt-get install golang");
 
-echo.notice("install mkcert");
-command.exec("git clone https://github.com/FiloSottile/mkcert && cd mkcert");
-command.exec("go build -ldflags '-X main.Version=$(git describe --tags)'");
-command.exec("mkcert -install");
+echo.notice("install mkcert v1.4.3");
+command.exec("wget -O mkcert https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-arm ");
+command.exec("chmod +x  mkcert")
+command.exec("sudo mv mkcert /usr/local/bin")
+command.exec("mkcert -install ");
 
+import site
+from importlib import reload
+sys.path.append("/usr/local/bin")
+reload(site)
 echo.notice("Create certificate for domain name");
 env = environment.Environment("~/.env");
 domainName=env.get("DOMAINNAME");
