@@ -11,4 +11,5 @@ sys.path.append(path + "/depuydt/src/")
 from depuydt import command,environment,echo
 command.exec("sudo apt update && sudo apt upgrade -y");
 command.exec("sudo apt-get install -y mariadb-server");
-command.exec("sudo mysql_secure_installation");
+command.exec("sudo chmod 0444 /etc/mysql/my.cnf")
+os.system("cd && sudo mysql_secure_installation && cd /mnt/usb/linuxEssentials");
